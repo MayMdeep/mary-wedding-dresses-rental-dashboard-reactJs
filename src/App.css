@@ -1,0 +1,310 @@
+html,
+body,
+#root,
+.App,
+.content{
+ height: 100%;
+ width: 100%;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ transition: padding-left 0.3s ease;
+
+}
+
+.App{
+  display: flex;
+  position: relative;
+}
+
+.layout {
+  background-image: url('assets/Group 1000005855.png');
+  background-size: 100vh;
+  background-repeat: no-repeat;
+}
+
+.label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  outline: none;
+}
+
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0px 0px 20px 20px;
+  background-color: #0A722E ;
+  width: 200px;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  transition: transform 1s ease-in-out, width 1s ease-in-out;
+  transform: translateX(0);
+}
+.logo {
+  margin-left: -20px;
+  text-align: center;
+  color: #224729;
+  background-color: white;
+  border-radius: 1px;
+}
+.logo .icon {
+  font-size: 1.4rem;
+}
+
+.logosidebar{
+  width: 100%;
+  height: 100%;
+}
+.menu--list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.menu--list .item{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 16px 20px;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+  color: white;
+  position: relative;
+}
+.menu--list .item:hover{
+  color: black;
+}
+.item:hover .chicken-icon path {
+  fill: black;
+}
+
+.menu--list .item span{
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.menu--list .item::before{
+  transform: translate(100%, -50%);
+  content: '';
+  height: 200%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-radius: 30px 0 0 30px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAABvAQMAAABYeDswAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAAAh0lEQVR4nO3Sqw2AMBSF4d4gKjtCRyGMwghIBAE2YxRGQCII5Z6chpaHw4L4Qirvf8ToN8ir0t8tuqRtk66Bvk6WFewFhvFUdlhs0C3Qz7CcYDCq7NCu0M8wGFUfVP39/ahbzHnVeGFem5dnhViEdViK1Vgwbxors3i+Aa4i30m+n+e6rgs8AOWTh/CqOajhAAAAAElFTkSuQmCC);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  transition: all .3s ease-in-out;
+}
+
+.menu--list .item::after{
+  transform: translate(100%, -50%);
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+   background: white;
+   transition: all .3s ease-in-out;
+   border-radius: 30px 0 0 30px;
+}
+.menu--list .item:hover::before,
+.menu--list .item:hover::after{
+  transform: translate(0%, -50%);
+}
+.menu--list .item.active::before,
+.menu--list .item.active::after {
+    transform: translate(0%, -50%);
+}
+.menu--list .item.active .icon {
+  color: #000 !important;
+}
+.menu--list .item.active {
+  color: #000 !important;
+}
+
+
+
+.toggle-button-open {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  outline: none;
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  /* left: 180px; */
+  z-index: 1000;
+  display: block;
+}
+.toggle-button-open-header {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  outline: none;
+}
+.toggle-button-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  outline: none;
+  position: absolute;
+  top: 80px;
+  /* left: 180px; */
+  z-index: 1000;
+
+}
+.hidden {
+  display: none;
+  transform: translateX(-100%);
+}
+
+.menu::-webkit-scrollbar {
+  width: 0px; /* Width of the scrollbar */
+}
+
+.menu::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* Track color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Scrollbar color */
+  border-radius: 5px; /* Rounded corners */
+  /* border: 2px solid #224729;  */
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+.edit-icon {
+  cursor: pointer;
+}
+.permission-icon {
+  cursor: pointer;
+}
+
+.delete-icon:hover path {
+  fill: red !important;
+}
+.edit-icon:hover path {
+  fill: green !important;
+}
+.permission-icon:hover path {
+  fill: rgb(230, 142, 28) !important;
+}
+
+.MuiTableCell-head {
+color: whitesmoke !important;
+font-weight: 600 !important;
+}
+
+.inputlable {
+  margin-bottom: 10px;
+  color: black !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  height:0.4375em !important;
+}
+.css-10o2lyd-MuiStack-root{
+  padding-top: 0px !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  width: 100%;
+}
+
+.dropzone {  
+  border: 2px dashed #0A722E;  
+  padding: 20px;  
+  text-align: center;  
+  border-radius: 8px;  
+  transition: background-color 0.3s;  
+}  
+
+.dropzone:hover {  
+  background-color: #f0f0f0;  
+}  
+
+.dropzone p {  
+  color: #555;  
+  margin: 0;  
+}  
+
+.not-authorized-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.not-authorized-icon {
+  font-size: 80px;
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+.not-authorized-header {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.not-authorized-message {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.not-authorized-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.not-authorized-button:hover {
+  background-color: #4cae4c;
+}
+
+.contact-support-link {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #337ab7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.contact-support-link:hover {
+  color: #23527c;
+}
+
+.toggle-button-open {  
+  display: inline-block; /* Ensures the icon is treated as a block for hover effects */  
+}  
+
+.spin-icon {  
+  transition: transform 0.5s ease; /* Smooth transition for the transform property */  
+}  
+
+.toggle-button-open:hover .spin-icon {  
+  transform: rotate(150deg); /* Rotate the icon on hover */  
+}  
